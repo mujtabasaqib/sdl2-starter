@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Create an SDL window
-    SDL_Window* win = SDL_CreateWindow("Hello SDL_ttf", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+    SDL_Window* win = SDL_CreateWindow("Hello World", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
     if (win == NULL) {
         std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
         SDL_Quit();
@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Load a font
-    TTF_Font* font = TTF_OpenFont("/path/to/your/font.ttf", 24); // Adjust the path to a valid TTF font file
+    TTF_Font* font = TTF_OpenFont("/Library/Fonts/Arial Unicode.ttf", 24); // path to a valid TTF font file
     if (font == NULL) {
         std::cerr << "TTF_OpenFont Error: " << TTF_GetError() << std::endl;
         SDL_DestroyRenderer(renderer);
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 
     // Render text
     SDL_Color textColor = {255, 255, 255, 255}; // White color
-    SDL_Surface* textSurface = TTF_RenderText_Solid(font, "Hello, SDL_ttf!", textColor);
+    SDL_Surface* textSurface = TTF_RenderText_Solid(font, "Hello World!", textColor);
     if (textSurface == NULL) {
         std::cerr << "TTF_RenderText_Solid Error: " << TTF_GetError() << std::endl;
         TTF_CloseFont(font);
